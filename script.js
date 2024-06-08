@@ -16,8 +16,8 @@ function animateCoin(event) {
     const y = event.clientY - rect.top;
     const centerX = rect.width / 2;
     const centerY = rect.height / 2;
-    const rotateX = (centerY - y) / 10;
-    const rotateY = (x - centerX) / 10;
+    const rotateX = (centerY - y) / 5;
+    const rotateY = (x - centerX) / 5;
 
     coinImg.style.transform = `rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
     setTimeout(() => {
