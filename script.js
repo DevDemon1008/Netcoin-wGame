@@ -4,7 +4,7 @@ let energy = 1500;
 const maxEnergy = 1500;
 let clickCount = 0;
 const clicksForFullBar = 300;
-let upgradeCost= 10;
+let upgradeCost = 10;
 
 document.getElementById('coin-img').addEventListener('click', mineCoin);
 document.getElementById('upgrade-btn').addEventListener('click', upgradeClick);
@@ -25,24 +25,7 @@ function mineCoin(event) {
         alert('Не хватает энергии!');
     }
 }
- // Изменяем объявление переменной на let, чтобы можно было изменять ее значение
 
-function upgradeClick() {
-    if (coinCount >= upgradeCost) {
-        coinCount -= upgradeCost;
-        clickValue++;
-        document.getElementById('coin-count').innerText = coinCount;
-        document.getElementById('current-upgrade').innerText = `За клик  ${clickValue}`;
-        updateUpgradeCost(); // Обновляем цену улучшения
-    } else {
-        alert('Не хватает монет для улучшения!');
-    }
-}
-
-function updateUpgradeCost() {
-    upgradeCost *= 4; // Увеличиваем цену улучшения
-    document.getElementById('upgrade-cost').innerText = upgradeCost;
-}
 function animateCoin(event) {
     const coinImg = document.getElementById('coin-img');
     const rect = coinImg.getBoundingClientRect();
@@ -58,6 +41,7 @@ function animateCoin(event) {
         coinImg.style.transform = '';
     }, 200); // Adjust animation time
 }
+
 function showPlusOne(event) {
     const coinDisplay = document.getElementById('coin-display');
     const plusOne = document.createElement('div');
@@ -73,7 +57,6 @@ function showPlusOne(event) {
         plusOne.remove();
     });
 }
-
 
 function regenerateEnergy() {
     if (energy < maxEnergy) {
@@ -110,7 +93,7 @@ function createParticles(event) {
 
         // Generate random direction and distance for particle
         const angle = Math.random() * 2 * Math.PI; // Random angle
-        const distance = Math.random() * 100; // Random distance
+        const distance = Math.random() * 50 + 50; // Random distance between 50 and 100
         const translateX = Math.cos(angle) * distance;
         const translateY = Math.sin(angle) * distance;
 
@@ -121,6 +104,23 @@ function createParticles(event) {
             particle.remove();
         });
     }
+}
+
+function upgradeClick() {
+    if (coinCount >= upgradeCost) {
+        coinCount -= upgradeCost;
+        clickValue++;
+        document.getElementById('coin-count').innerText = coinCount;
+        document.getElementById('current-upgrade').innerText = `За клик ${clickValue}`;
+        updateUpgradeCost(); // Обновляем цену улучшения
+    } else {
+        alert('Не хватает монет для улучшения!');
+    }
+}
+
+function updateUpgradeCost() {
+    upgradeCost *= 2; // Увеличиваем цену улучшения в 2 раза
+    document.getElementById('upgrade-cost').innerText = upgradeCost;
 }
 
 // Initialize energy regeneration timer
