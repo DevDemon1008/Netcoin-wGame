@@ -6,7 +6,10 @@ body {
     align-items: center;
     height: 100vh;
     margin: 0;
-    background-color: #e0f7fa;
+    background-color: #121212;
+    color: #E0E0E0;
+    user-select: none; /* Prevent text/image selection */
+    -webkit-user-select: none;
 }
 
 #container {
@@ -19,9 +22,14 @@ body {
     text-align: center;
 }
 
-h1 {
-    margin-bottom: 20px;
-    color: #00796b;
+#balance-display {
+    margin-bottom: 10px;
+}
+
+#coin-count {
+    font-size: 4vmin;
+    font-weight: bold;
+    color: #BB86FC;
 }
 
 #coin-display {
@@ -30,17 +38,118 @@ h1 {
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    margin-bottom: 20px;
 }
 
 #coin-img {
-    width: 20vmin; /* Размер монеты относительно экрана */
-    height: 20vmin;
+    width: 30vmin;
+    height: 30vmin;
     cursor: pointer;
-    transition: transform 0.3s;
+    transition: transform 0.1s;
+    -webkit-tap-highlight-color: transparent; /* Prevent blue highlight on mobile */
 }
 
-#coin-count {
-    font-size: 5vmin; /* Размер текста относительно экрана */
-    font-weight: bold;
+#energy-container {
+    position: relative;
+    width: 80%;
     margin-top: 10px;
+    text-align: center;
+}
+
+#energy-display {
+    font-size: 2vmin;
+    color: #03DAC6;
+    margin-bottom: 5px;
+}
+
+#energy-bar {
+    width: 100%; /* Adjust progress bar width */
+    height: 10px; /* Adjust progress bar height */
+    background-color: #333333;
+    border-radius: 5px; /* Adjust border radius */
+    overflow: hidden;
+    margin-top: 10px;
+}
+
+#energy-bar-fill {
+    height: 100%;
+    width: 0; /* Initially empty */
+    background-color: #03DAC6;
+    border-radius: 5px;
+    transition: width 0.3s; /* Adjust animation time */
+}
+
+/* styles.css */
+/* Обновленные стили для эффекта +1 */
+.plus-one {
+    position: absolute;
+    color: white;
+    font-size: 3vmin; /* Увеличиваем размер */
+    font-weight: bold; /* Делаем текст жирнее */
+    animation: floatUp 1s ease-out forwards;
+    pointer-events: none;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Добавляем тень для эффекта */
+}
+
+@keyframes floatUp {
+    0% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    100% {
+        opacity: 0;
+        transform: translateY(-50px);
+    }
+}
+
+
+/* Particle styles */
+.particle {
+    position: absolute;
+    width: 5px;
+    height: 5px;
+    background-color: #BB86FC;
+    border-radius: 50%;
+    pointer-events: none;
+    animation: particleMove 1s ease-out forwards;
+}
+
+@keyframes particleMove {
+    0% {
+        opacity: 1;
+        transform: translate(0, 0);
+    }
+    100% {
+        opacity: 0;
+        transform: translate(var(--x), var(--y));
+    }
+}
+/* Добавляем стили для кнопки улучшения */
+#upgrade-btn {
+    padding: 15px 40px; /* Увеличиваем отступы */
+    font-size: 2vmin;
+    margin-top: 20px; /* Добавляем немного отступа сверху */
+}
+
+.shop-item {
+    padding: 10px 20px;
+    margin: 10px 0;
+    font-size: 2vmin;
+    background-color: #333333;
+    color: #E0E0E0;
+    border: 1px solid #444444;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+    -webkit-tap-highlight-color: transparent; /* Убираем синий квадрат на мобильных устройствах */
+}
+
+.shop-item:hover {
+    background-color: #444444;
+    color: #BB86FC;
+}
+
+#current-upgrade {
+    margin-top: 10px;
+    font-size: 2vmin;
 }
