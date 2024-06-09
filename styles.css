@@ -30,7 +30,7 @@ body {
 }
 
 #coin-count {
-    font-size: 60vw; /* Увеличенный в 4 раза относительный размер текста */
+    font-size: 4vmin; /* Устанавливаем размер текста в относительных единицах */
     font-weight: bold;
     color: #BB86FC;
 }
@@ -45,8 +45,8 @@ body {
 }
 
 #coin-img {
-    width: 200vmin; /* Увеличенный в 4 раза размер изображения */
-    height: 200vmin;
+    width: 30vmin; /* Устанавливаем размер изображения в относительных единицах */
+    height: 30vmin;
     cursor: pointer;
     transition: transform 0.1s;
     -webkit-tap-highlight-color: transparent; /* Убираем синий квадрат на мобильных устройствах */
@@ -61,16 +61,16 @@ body {
 }
 
 #energy-display {
-    font-size: 24vw; /* Увеличенный в 4 раза относительный размер текста */
+    font-size: 2vmin; /* Устанавливаем размер текста в относительных единицах */
     color: #03DAC6;
     margin-bottom: 5px;
 }
 
 #energy-bar {
     width: 100%;
-    height: 60px; /* Увеличенный в 4 раза размер */
+    height: 10px; /* Устанавливаем высоту прогресс-бара в относительных единицах */
     background-color: #333333;
-    border-radius: 5px;
+    border-radius: 5px; /* Устанавливаем радиус скругления в относительных единицах */
     overflow: hidden;
 }
 
@@ -85,12 +85,11 @@ body {
 .plus-one {
     position: absolute;
     color: white;
-    font-size: 24vw; /* Увеличенный в 4 раза относительный размер текста */
+    font-size: 2vmin; /* Устанавливаем размер текста в относительных единицах */
     font-weight: bold;
     animation: floatUp 1s ease-out forwards;
     pointer-events: none;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-    user-select: none;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
 }
 
 @keyframes floatUp {
@@ -100,7 +99,7 @@ body {
     }
     100% {
         opacity: 0;
-        transform: translateY(-50px);
+        transform: translateY(-20px);
     }
 }
 
@@ -109,13 +108,13 @@ body {
 }
 
 .shop-item {
-    padding: 80px 120px; /* Увеличенный в 4 раза размер кнопки */
-    margin: 10px 0;
-    font-size: 24vw; /* Увеличенный в 4 раза относительный размер текста */
+    padding: 1vmin 2vmin; /* Устанавливаем отступы в относительных единицах */
+    margin: 1vmin 0;
+    font-size: 2vmin; /* Устанавливаем размер текста в относительных единицах */
     background-color: #333333;
     color: #E0E0E0;
     border: 1px solid #444444;
-    border-radius: 5px;
+    border-radius: 10px; /* Устанавливаем радиус скругления в относительных единицах */
     cursor: pointer;
     transition: background-color 0.3s, color 0.3s;
     -webkit-tap-highlight-color: transparent; /* Убираем синий квадрат на мобильных устройствах */
@@ -127,14 +126,14 @@ body {
 }
 
 #current-upgrade {
-    margin-top: 10px;
-    font-size: 24vw; /* Увеличенный в 4 раза относительный размер текста */
+    margin-top: 2vmin;
+    font-size: 2vmin; /* Устанавливаем размер текста в относительных единицах */
 }
 
 .particle {
     position: absolute;
-    width: 60px; /* Увеличенный в 4 раза размер частицы */
-    height: 60px;
+    width: 0.5vmin; /* Устанавливаем размер частицы в относительных единицах */
+    height: 0.5vmin;
     background-color: #BB86FC;
     border-radius: 50%;
     animation: particleMove 1s ease-out forwards;
@@ -154,16 +153,16 @@ body {
 /* Медиазапросы для дальнейшей адаптивности */
 @media (min-width: 768px) {
     #coin-count, #energy-display, .shop-item, #current-upgrade, .plus-one {
-        font-size: 12vw;
+        font-size: 16px;
     }
 
     #coin-img {
-        width: 120vmin;
-        height: 120vmin;
+        width: 50px;
+        height: 50px;
     }
 
     .particle {
-        width: 40px;
-        height: 40px;
+        width: 2px;
+        height: 2px;
     }
 }
