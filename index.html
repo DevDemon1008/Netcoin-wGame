@@ -3,15 +3,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Heru</title>
+    <title>Notcoin Game</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <div id="container">
-        <h1>Note</h1>
-        <div id="coin-display">
-            <img src="coin.png" alt="Coin" id="coin-img">
+        <div id="balance-display">
             <div id="coin-count">0</div>
+        </div>
+        <div id="coin-display">
+            <img id="coin-img" src="coin.png" alt="Coin">
+        </div>
+        <div id="energy-container">
+            <div id="energy-display">⚡️ 1500 / 1500</div>
+            <div id="energy-bar">
+                <div id="energy-bar-fill"></div>
+            </div>
+        </div>
+        <div id="shop">
+            <button id="upgrade-btn" class="shop-item">Улучшить <span id="upgrade-cost">10</span> монет</button>
+            <div id="current-upgrade">За клик 1</div>
         </div>
     </div>
     <script src="script.js"></script>
