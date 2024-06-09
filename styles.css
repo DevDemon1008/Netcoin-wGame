@@ -22,15 +22,15 @@ body {
     width: 100%;
     height: 100%;
     text-align: center;
-    padding: 30px; /* Добавляем отступ для небольших экранов */
+    padding: 20px; /* Добавляем отступ для небольших экранов */
 }
 
 #balance-display {
-    margin-bottom: 30px;
+    margin-bottom: 20px;
 }
 
 #coin-count {
-    font-size: 12vmin; /* Устанавливаем размер текста в относительных единицах */
+    font-size: 8vmin; /* Устанавливаем размер текста в относительных единицах */
     font-weight: bold;
     color: #BB86FC;
 }
@@ -41,12 +41,12 @@ body {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    margin-bottom: 60px;
+    margin-bottom: 30px;
 }
 
 #coin-img {
-    width: 90vmin; /* Устанавливаем размер изображения в относительных единицах */
-    height: 90vmin;
+    width: 60vmin; /* Устанавливаем размер изображения в относительных единицах */
+    height: 60vmin;
     cursor: pointer;
     transition: transform 0.1s;
     -webkit-tap-highlight-color: transparent; /* Убираем синий квадрат на мобильных устройствах */
@@ -56,21 +56,21 @@ body {
 
 #energy-container {
     width: 80%;
-    margin-top: 30px;
+    margin-top: 20px;
     text-align: center;
 }
 
 #energy-display {
-    font-size: 6vmin; /* Устанавливаем размер текста в относительных единицах */
+    font-size: 4vmin; /* Устанавливаем размер текста в относительных единицах */
     color: #03DAC6;
-    margin-bottom: 15px;
+    margin-bottom: 10px;
 }
 
 #energy-bar {
     width: 100%;
-    height: 30px; /* Устанавливаем высоту прогресс-бара в относительных единицах */
+    height: 20px; /* Устанавливаем высоту прогресс-бара в относительных единицах */
     background-color: #333333;
-    border-radius: 15px; /* Устанавливаем радиус скругления в относительных единицах */
+    border-radius: 10px; /* Устанавливаем радиус скругления в относительных единицах */
     overflow: hidden;
 }
 
@@ -78,18 +78,18 @@ body {
     height: 100%;
     width: 0;
     background-color: #03DAC6;
-    border-radius: 15px;
+    border-radius: 10px;
     transition: width 0.3s;
 }
 
 .plus-one {
     position: absolute;
     color: white;
-    font-size: 6vmin; /* Устанавливаем размер текста в относительных единицах */
+    font-size: 4vmin; /* Устанавливаем размер текста в относительных единицах */
     font-weight: bold;
     animation: floatUp 1s ease-out forwards;
     pointer-events: none;
-    text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.5);
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
 
 @keyframes floatUp {
@@ -99,22 +99,22 @@ body {
     }
     100% {
         opacity: 0;
-        transform: translateY(-60px);
+        transform: translateY(-40px);
     }
 }
 
 #shop {
-    margin-top: 60px;
+    margin-top: 40px;
 }
 
 .shop-item {
-    padding: 3vmin 6vmin; /* Устанавливаем отступы в относительных единицах */
-    margin: 3vmin 0;
-    font-size: 6vmin; /* Устанавливаем размер текста в относительных единицах */
+    padding: 2vmin 4vmin; /* Устанавливаем отступы в относительных единицах */
+    margin: 2vmin 0;
+    font-size: 4vmin; /* Устанавливаем размер текста в относительных единицах */
     background-color: #333333;
     color: #E0E0E0;
-    border: 3px solid #444444;
-    border-radius: 30px; /* Устанавливаем радиус скругления в относительных единицах */
+    border: 2px solid #444444;
+    border-radius: 20px; /* Устанавливаем радиус скругления в относительных единицах */
     cursor: pointer;
     transition: background-color 0.3s, color 0.3s;
     -webkit-tap-highlight-color: transparent; /* Убираем синий квадрат на мобильных устройствах */
@@ -126,14 +126,14 @@ body {
 }
 
 #current-upgrade {
-    margin-top: 30px;
-    font-size: 6vmin; /* Устанавливаем размер текста в относительных единицах */
+    margin-top: 20px;
+    font-size: 4vmin; /* Устанавливаем размер текста в относительных единицах */
 }
 
 .particle {
     position: absolute;
-    width: 1.5vmin; /* Устанавливаем размер частицы в относительных единицах */
-    height: 1.5vmin;
+    width: 1vmin; /* Устанавливаем размер частицы в относительных единицах */
+    height: 1vmin;
     background-color: #BB86FC;
     border-radius: 50%;
     animation: particleMove 1s ease-out forwards;
@@ -153,12 +153,12 @@ body {
 /* Медиазапросы для дальнейшей адаптивности */
 @media (min-width: 768px) {
     #coin-count, #energy-display, .shop-item, #current-upgrade, .plus-one {
-        font-size: 2vmin;
+        font-size: 2.5vmin;
     }
 
     #coin-img {
-        width: 30vmin;
-        height: 30vmin;
+        width: 20vmin;
+        height: 20vmin;
     }
 
     .particle {
