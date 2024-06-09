@@ -30,7 +30,7 @@ body {
 }
 
 #coin-count {
-    font-size: 8vw; /* Относительный размер текста */
+    font-size: 60vw; /* Увеличенный в 4 раза относительный размер текста */
     font-weight: bold;
     color: #BB86FC;
 }
@@ -45,8 +45,8 @@ body {
 }
 
 #coin-img {
-    width: 35vmin;
-    height: 35vmin;
+    width: 200vmin; /* Увеличенный в 4 раза размер изображения */
+    height: 200vmin;
     cursor: pointer;
     transition: transform 0.1s;
     -webkit-tap-highlight-color: transparent; /* Убираем синий квадрат на мобильных устройствах */
@@ -61,14 +61,14 @@ body {
 }
 
 #energy-display {
-    font-size: 4vw; /* Относительный размер текста */
+    font-size: 24vw; /* Увеличенный в 4 раза относительный размер текста */
     color: #03DAC6;
     margin-bottom: 5px;
 }
 
 #energy-bar {
     width: 100%;
-    height: 10px;
+    height: 60px; /* Увеличенный в 4 раза размер */
     background-color: #333333;
     border-radius: 5px;
     overflow: hidden;
@@ -85,7 +85,7 @@ body {
 .plus-one {
     position: absolute;
     color: white;
-    font-size: 3vmin;
+    font-size: 24vw; /* Увеличенный в 4 раза относительный размер текста */
     font-weight: bold;
     animation: floatUp 1s ease-out forwards;
     pointer-events: none;
@@ -109,9 +109,9 @@ body {
 }
 
 .shop-item {
-    padding: 10px 20px;
+    padding: 80px 120px; /* Увеличенный в 4 раза размер кнопки */
     margin: 10px 0;
-    font-size: 4vw;
+    font-size: 24vw; /* Увеличенный в 4 раза относительный размер текста */
     background-color: #333333;
     color: #E0E0E0;
     border: 1px solid #444444;
@@ -128,13 +128,13 @@ body {
 
 #current-upgrade {
     margin-top: 10px;
-    font-size: 4vw;
+    font-size: 24vw; /* Увеличенный в 4 раза относительный размер текста */
 }
 
 .particle {
     position: absolute;
-    width: 5px;
-    height: 5px;
+    width: 60px; /* Увеличенный в 4 раза размер частицы */
+    height: 60px;
     background-color: #BB86FC;
     border-radius: 50%;
     animation: particleMove 1s ease-out forwards;
@@ -148,5 +148,22 @@ body {
     100% {
         opacity: 0;
         transform: translate(var(--x), var(--y));
+    }
+}
+
+/* Медиазапросы для дальнейшей адаптивности */
+@media (min-width: 768px) {
+    #coin-count, #energy-display, .shop-item, #current-upgrade, .plus-one {
+        font-size: 12vw;
+    }
+
+    #coin-img {
+        width: 120vmin;
+        height: 120vmin;
+    }
+
+    .particle {
+        width: 40px;
+        height: 40px;
     }
 }

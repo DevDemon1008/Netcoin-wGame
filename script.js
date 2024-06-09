@@ -111,7 +111,7 @@ function upgradeClick() {
         coinCount -= upgradeCost;
         clickValue++;
         document.getElementById('coin-count').innerText = coinCount;
-        document.getElementById('current-upgrade').innerText = `За клик ${clickValue}`;
+        document.getElementById('current-upgrade').innerText = `Текущая сила клика: ${clickValue}`;
         updateUpgradeCost(); // Обновляем цену улучшения
     } else {
         alert('Не хватает монет для улучшения!');
