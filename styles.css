@@ -1,168 +1,165 @@
-/* styles.css */
 body {
     font-family: 'Arial', sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
-    margin: 0;
-    background-color: #121212;
-    color: #E0E0E0;
-    -webkit-user-select: none; /* Disable text selection */
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
+    transition: background-color 0.3s ease-in-out;
 }
 
-#container {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    height: 100%;
+.container {
     text-align: center;
-    padding: 20px; /* Добавляем отступ для небольших экранов */
+    background-color: #ffffff;
+    padding: 5vw;
+    border-radius: 20px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    max-width: 600px;
+    width: 90%;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
 }
 
-#balance-display {
-    margin-bottom: 20px;
+.container:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.2);
 }
 
-#coin-count {
-    font-size: 8vmin; /* Устанавливаем размер текста в относительных единицах */
-    font-weight: bold;
-    color: #BB86FC;
+h1 {
+    font-size: 2.5em;
+    margin-bottom: 1.5em;
+    color: #333;
 }
 
-#coin-display {
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    margin-bottom: 30px;
+.coin-display {
+    font-size: 1.5em;
+    margin-bottom: 1.5em;
+    color: #555;
 }
 
-#coin-img {
-    width: 60vmin; /* Устанавливаем размер изображения в относительных единицах */
-    height: 60vmin;
+#tap-button {
+    background-color: #28a745;
+    color: #fff;
+    border: none;
+    padding: 15px 30px;
+    font-size: 1.2em;
     cursor: pointer;
-    transition: transform 0.1s;
-    -webkit-tap-highlight-color: transparent; /* Убираем синий квадрат на мобильных устройствах */
-    user-select: none; /* Предотвращаем выделение изображения */
-    -webkit-user-drag: none; /* Предотвращаем перетаскивание изображения */
-}
-
-#energy-container {
-    width: 80%;
-    margin-top: 20px;
-    text-align: center;
-}
-
-#energy-display {
-    font-size: 4vmin; /* Устанавливаем размер текста в относительных единицах */
-    color: #03DAC6;
-    margin-bottom: 10px;
-}
-
-#energy-bar {
+    border-radius: 10px;
     width: 100%;
-    height: 20px; /* Устанавливаем высоту прогресс-бара в относительных единицах */
-    background-color: #333333;
-    border-radius: 10px; /* Устанавливаем радиус скругления в относительных единицах */
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+#tap-button:hover {
+    background-color: #218838;
+    transform: scale(1.05);
+}
+
+#tap-button:active {
+    transform: scale(0.95);
+}
+
+#progress-bar {
+    width: 100%;
+    height: 20px;
+    margin-top: 10px;
+    border-radius: 10px;
+    overflow: hidden;
+    background-color: #e9ecef;
+}
+
+progress::-webkit-progress-bar {
+    background-color: #e9ecef;
+    border-radius: 10px;
+}
+
+progress::-webkit-progress-value {
+    background-color: #28a745;
+    border-radius: 10px;
+}
+
+.boosts {
+    margin-top: 1.5em;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.boost {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 15px 30px;
+    font-size: 0.9em;
+    cursor: pointer;
+    border-radius: 10px;
+    margin: 0.5em;
+    flex: 1 0 40%;
+    max-width: 150px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.boost:hover {
+    background-color: #0056b3;
+    transform: scale(1.05);
+}
+
+.boost:active {
+    transform: scale(0.95);
+}
+
+.navigation {
+    margin-top: 1.5em;
+}
+.navigation button {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 15px 30px;
+    font-size: 1em;
+    cursor: pointer;
+    border-radius: 10px;
+    margin: 0.5em;
+    width: 45%;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.navigation button:hover {
+    background-color: #0056b3;
+    transform: scale(1.05);
+}
+
+.navigation button:active {
+    transform: scale(0.95);
+}
+
+.leaderboard {
+    margin-top: 1.5em;
+    max-width: 100%;
     overflow: hidden;
 }
 
-#energy-bar-fill {
-    height: 100%;
-    width: 0;
-    background-color: #03DAC6;
-    border-radius: 10px;
-    transition: width 0.3s;
+#leaderboard-list {
+    list-style-type: none;
+    padding: 0;
+    transition: max-height 0.3s ease-in-out, opacity 0.3s ease-in-out;
+    max-height: 0;
+    opacity: 0;
 }
 
-.plus-one {
-    position: absolute;
-    color: white;
-    font-size: 4vmin; /* Устанавливаем размер текста в относительных единицах */
-    font-weight: bold;
-    animation: floatUp 1s ease-out forwards;
-    pointer-events: none;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+#leaderboard-list li {
+    background-color: #e9ecef;
+    padding: 10px;
+    margin: 5px 0;
+    border-radius: 5px;
 }
 
-@keyframes floatUp {
-    0% {
-        opacity: 1;
-        transform: translateY(0);
-    }
-    100% {
-        opacity: 0;
-        transform: translateY(-40px);
-    }
+.section {
+    display: none;
+    transition: max-height 0.3s ease-in-out, opacity 0.3s ease-in-out;
 }
 
-#shop {
-    margin-top: 40px;
-}
-
-.shop-item {
-    padding: 2vmin 4vmin; /* Устанавливаем отступы в относительных единицах */
-    margin: 2vmin 0;
-    font-size: 4vmin; /* Устанавливаем размер текста в относительных единицах */
-    background-color: #333333;
-    color: #E0E0E0;
-    border: 2px solid #444444;
-    border-radius: 20px; /* Устанавливаем радиус скругления в относительных единицах */
-    cursor: pointer;
-    transition: background-color 0.3s, color 0.3s;
-    -webkit-tap-highlight-color: transparent; /* Убираем синий квадрат на мобильных устройствах */
-}
-
-.shop-item:hover {
-    background-color: #444444;
-    color: #BB86FC;
-}
-
-#current-upgrade {
-    margin-top: 20px;
-    font-size: 4vmin; /* Устанавливаем размер текста в относительных единицах */
-}
-
-.particle {
-    position: absolute;
-    width: 1vmin; /* Устанавливаем размер частицы в относительных единицах */
-    height: 1vmin;
-    background-color: #BB86FC;
-    border-radius: 50%;
-    animation: particleMove 1s ease-out forwards;
-}
-
-@keyframes particleMove {
-    0% {
-        opacity: 1;
-        transform: translate(0, 0);
-    }
-    100% {
-        opacity: 0;
-        transform: translate(var(--x), var(--y));
-    }
-}
-
-/* Медиазапросы для дальнейшей адаптивности */
-@media (min-width: 768px) {
-    #coin-count, #energy-display, .shop-item, #current-upgrade, .plus-one {
-        font-size: 2.5vmin;
-    }
-
-    #coin-img {
-        width: 20vmin;
-        height: 20vmin;
-    }
-
-    .particle {
-        width: 0.5vmin;
-        height: 0.5vmin;
-    }
+.section.show {
+    display: block;
+    max-height: 1000px; /* arbitrary high value to enable smooth transition */
+    opacity: 1;
 }
