@@ -1,28 +1,40 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Notcoin Game</title>
+    <title>KickCoin</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div id="container">
-        <div id="balance-display">
-            <div id="coin-count">0</div>
+    <div class="container">
+        <h1>KickCoin</h1>
+        <div class="coin-display">
+            <span id="coin-count">0</span> Coins
+            <progress id="progress-bar" value="0" max="100"></progress>
+            <span id="level-info">Level 1</span>
         </div>
-        <div id="coin-display">
-            <img id="coin-img" src="coin.png" alt="Coin">
-        </div>
-        <div id="energy-container">
-            <div id="energy-display">⚡️ 1500 / 1500</div>
-            <div id="energy-bar">
-                <div id="energy-bar-fill"></div>
+        <button id="tap-button">Tap to Mine</button>
+        <div id="boosts-section" class="section">
+            <h2>Boosts</h2>
+            <div class="boosts">
+                <button class="boost" id="energy-boost">Energy Boost (x2)</button>
+                <button class="boost" id="speed-boost">Speed Boost (x2)</button>
+                <button class="boost" id="multitap-boost">Multitap Boost (x2)</button>
+                <button class="boost" id="auto-tap-boost">Auto Tap Boost (x2)</button>
             </div>
         </div>
-        <div id="shop">
-            <button id="upgrade-btn" class="shop-item">Улучшить <span id="upgrade-cost">10</span> монет</button>
-            <div id="current-upgrade">За клик 1</div>
+        <div id="leaderboard-section" class="section" style="display:none;">
+            <h2>Leaderboard</h2>
+            <ul id="leaderboard-list">
+                <li>Player1: 1000 Coins</li>
+                <li>Player2: 900 Coins</li>
+                <li>Player3: 800 Coins</li>
+            </ul>
+        </div>
+        <div class="navigation">
+            <button id="toggle-boosts">Boosts</button>
+            <button id="toggle-leaderboard">Leaderboard</button>
         </div>
     </div>
     <script src="script.js"></script>
