@@ -110,6 +110,7 @@ progress::-webkit-progress-value {
 .navigation {
     margin-top: 1.5em;
 }
+
 .navigation button {
     background-color: #007bff;
     color: #fff;
@@ -119,7 +120,7 @@ progress::-webkit-progress-value {
     cursor: pointer;
     border-radius: 10px;
     margin: 0.5em;
-    width: 45%;
+    width: 30%;
     transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
@@ -162,4 +163,25 @@ progress::-webkit-progress-value {
     display: block;
     max-height: 1000px; /* arbitrary high value to enable smooth transition */
     opacity: 1;
+}
+
+.check-subscription {
+    background-color: #ffc107;
+    color: #000;
+    border: none;
+    padding: 10px 20px;
+    font-size: 0.9em;
+    cursor: pointer;
+    border-radius: 10px;
+    margin-left: 10px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.check-subscription:hover {
+    background-color: #e0a800;
+    transform: scale(1.05);
+}
+
+.check-subscription:active {
+    transform: scale(0.95);
 }

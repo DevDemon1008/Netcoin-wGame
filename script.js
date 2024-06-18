@@ -9,12 +9,16 @@ document.addEventListener('DOMContentLoaded', () => {
     const autoTapBoost = document.getElementById('auto-tap-boost');
     const toggleBoostsButton = document.getElementById('toggle-boosts');
     const toggleLeaderboardButton = document.getElementById('toggle-leaderboard');
+    const toggleEarnButton = document.getElementById('toggle-earn');
     const boostsSection = document.getElementById('boosts-section');
     const leaderboardSection = document.getElementById('leaderboard-section');
+    const earnSection = document.getElementById('earn-section');
+    const checkSubscriptionButtons = document.querySelectorAll('.check-subscription');
+
     let coins = 0;
     let boostMultiplier = 1;
     let autoTapInterval;
-    let currentLevel = 1;
+    let currentLevel = 1
     let maxCoinsForLevel = 1000; // Количество монет для достижения нового уровня
 
     // Функция для обновления монет и прогресс бара
@@ -81,6 +85,7 @@ document.addEventListener('DOMContentLoaded', () => {
         if (boostsSection.style.display === 'none' || boostsSection.style.display === '') {
             boostsSection.style.display = 'block';
             leaderboardSection.style.display = 'none';
+            earnSection.style.display = 'none';
         } else {
             boostsSection.style.display = 'none';
         }
@@ -90,8 +95,48 @@ document.addEventListener('DOMContentLoaded', () => {
         if (leaderboardSection.style.display === 'none' || leaderboardSection.style.display === '') {
             leaderboardSection.style.display = 'block';
             boostsSection.style.display = 'none';
+            earnSection.style.display = 'none';
         } else {
             leaderboardSection.style.display = 'none';
         }
     });
+
+    toggleEarnButton.addEventListener('click', () => {
+        if (earnSection.style.display === 'none' || earnSection.style.display === '') {
+            earnSection.style.display = 'block';
+            boostsSection.style.display = 'none';
+            leaderboardSection.style.display = 'none';
+        } else {
+            earnSection.style.display = 'none';
+        }
+    });
+
+    // Обработчики для проверки подписки
+    checkSubscriptionButtons.forEach(button => {
+        button.addEventListener('click', async () => {
+            const channel = button.getAttribute('data-channel');
+            const isSubscribed = await checkSubscription(channel);
+            if (isSubscribed) {
+                updateCoins(50); // Пример: 50 монет за подписку
+                button.disabled = true;
+                button.textContent = 'Подписка проверена';
+            } else {
+                alert('Вы не подписаны на этот канал.');
+            }
+        });
+    });
+
+    // Пример функции проверки подписки (не работает без серверной части)
+    async function checkSubscription(channel) {
+        // Здесь должна быть проверка подписки на сервере
+        // Например, с использованием API Telegram и серверной валидации
+        // Возвращает true, если подписан, иначе false
+
+        // Пример статической проверки (замените на реальную проверку)
+        return new Promise((resolve) => {
+            setTimeout(() => {
+                resolve(true); // Предполагаем, что пользователь подписан
+            }, 1000);
+        });
+    }
 });
